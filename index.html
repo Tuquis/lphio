@@ -30,7 +30,11 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 130px;
+      overflow-x: hidden;
+    }
 
     body {
       background: var(--cream);
@@ -38,7 +42,7 @@
       font-family: 'DM Sans', sans-serif;
       font-weight: 300;
       line-height: 1.65;
-      overflow-x: hidden;
+      min-width: 0;
     }
 
     /* ── KEYFRAMES ── */
@@ -166,7 +170,7 @@
       gap: 3.5rem;
       background: linear-gradient(135deg, var(--cream) 0%, var(--green-bg) 100%);
       position: relative;
-      overflow: hidden;
+      overflow: clip;
     }
     #hero::before {
       content: '';
@@ -600,21 +604,28 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
-      #hero { grid-template-columns: 1fr; padding: 4rem 5% 3rem; min-height: auto; }
+      #hero { grid-template-columns: 1fr; padding: 3rem 5% 3rem; min-height: auto; gap: 2.5rem; }
       .hero-card { margin-top: 0; }
       .bene-grid, .depo-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
+      html { scroll-padding-top: 100px; }
+      #urgency-bar { font-size: .7rem; padding: .4rem .8rem; }
+      #hero { padding: 2rem 4% 2.5rem; gap: 2rem; }
+      #hero h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
+      .hero-sub { font-size: .92rem; }
+      .hero-actions { max-width: 100%; }
+      .btn-wa, .btn-secondary { width: 100%; }
+      .hero-card { padding: 1.6rem 1.2rem; }
       .form-row { grid-template-columns: 1fr; }
-      .wa-float .wa-float-label { display: none; }
-      .wa-float { border-radius: 50%; width: 60px; height: 60px; padding: 0; display: flex; align-items: center; justify-content: center; }
-      .sticky-mobile { display: block; }
-      body { padding-bottom: 64px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgba(255,255,255,.08); }
+      .stat-item { background: var(--ink); border-right: none; }
       .bene-grid, .depo-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; text-align: center; }
-    }
-    @media (max-width: 480px) {
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      #beneficios, #prova, #faq { padding: 3.5rem 4%; }
+      #final-cta { padding: 4rem 4%; }
+      .wa-float .wa-float-label { display: none; }
+      .wa-float { border-radius: 50%; width: 58px; height: 58px; padding: 0; display: flex; align-items: center; justify-content: center; }
+      footer { flex-direction: column; text-align: center; padding: 1.5rem 4%; }
     }
   </style>
 </head>
