@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HIO Consórcios — Consórcio sem juros em Salvador</title>
-  <meta name="description" content="Consórcio de imóvel, veículo ou serviços sem juros. Mais de 15 administradoras. Contemplação acelerada. Atendimento especializado em Salvador, Bahia."/>
+  <meta name="description" content="Consórcio de imóvel, veículo ou serviços sem juros. Administradoras selecionadas. Contemplação acelerada. Atendimento especializado na Bahia e São Paulo."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet"/>
@@ -110,32 +110,51 @@
     nav {
       position: sticky; top: 0; width: 100%; z-index: 200;
       display: flex; align-items: center; justify-content: space-between;
-      padding: .65rem 5%;
-      background: rgba(253,253,245,0.96);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      transition: box-shadow .3s;
+      padding: .45rem 5%;
+      background: rgba(232,244,232,0.97);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(45,106,45,.18);
+      transition: padding .35s ease, box-shadow .35s ease, background .35s ease;
     }
-    nav.scrolled { box-shadow: 0 4px 24px rgba(20,20,16,.1); }
+    nav.scrolled {
+      padding: .3rem 5%;
+      box-shadow: 0 4px 28px rgba(20,20,16,.12);
+      background: rgba(220,238,220,0.98);
+    }
+    nav.scrolled .nav-logo img { height: 50px; }
     .nav-logo img {
       height: 72px; width: auto; display: block;
       object-fit: contain;
+      transition: height .35s ease;
+    }
+    .nav-center {
+      display: flex; align-items: center; gap: 2rem;
+      position: absolute; left: 50%; transform: translateX(-50%);
+    }
+    .nav-center a {
+      font-size: .8rem; font-weight: 500; color: var(--ink-soft);
+      text-decoration: none; letter-spacing: .02em;
+      transition: color .2s;
+    }
+    .nav-center a:hover { color: var(--green); }
+    .nav-tagline {
+      font-size: .72rem; color: var(--green); font-weight: 500;
+      letter-spacing: .06em; text-transform: uppercase;
+      opacity: .75;
     }
     .nav-right { display: flex; align-items: center; gap: 1rem; }
-    .nav-cta {
-      background: var(--wa); color: #fff;
-      border: none; padding: .6rem 1.3rem; border-radius: 6px;
-      font-family: 'DM Sans', sans-serif; font-size: .82rem;
-      font-weight: 600; cursor: pointer; text-decoration: none;
-      display: inline-flex; align-items: center; gap: .45rem;
-      transition: background .2s, transform .15s; white-space: nowrap;
-      animation: pulseRing 2.5s infinite;
+    .nav-contact {
+      font-size: .78rem; color: var(--ink-soft); font-weight: 400;
+      display: flex; flex-direction: column; align-items: flex-end; line-height: 1.3;
     }
-    .nav-cta:hover { background: var(--wa-dark); transform: translateY(-1px); }
+    .nav-contact strong { font-weight: 600; color: var(--ink); font-size: .8rem; }
+    @media (max-width: 860px) {
+      .nav-center { display: none; }
+      .nav-contact { display: none; }
+    }
     @media (max-width: 480px) {
-      nav { padding: .55rem 4%; }
-      .nav-cta-label { display: none; }
-      .nav-cta { padding: .6rem .75rem; border-radius: 50%; animation: none; }
+      nav { padding: .35rem 4%; }
+      nav.scrolled { padding: .25rem 4%; }
     }
 
     /* ── HERO ── */
@@ -614,6 +633,18 @@
   <div class="nav-logo">
     <img src="WhatsApp_Image_2026-03-19_at_08.33.29-removebg-preview.png" alt="HIO Consórcios" />
   </div>
+  <div class="nav-center">
+    <a href="#beneficios">Por que consórcio?</a>
+    <a href="#prova">Depoimentos</a>
+    <a href="#faq">Dúvidas</a>
+    <a href="#simular">Simular</a>
+  </div>
+  <div class="nav-right">
+    <div class="nav-contact">
+      <span class="nav-tagline">Bahia · São Paulo</span>
+      <strong>Atendimento especializado</strong>
+    </div>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -621,7 +652,7 @@
   <div class="hero-left">
     <div class="hero-eyebrow">
       <span class="live-dot"></span>
-      Salvador, Bahia · BACEN regulamentado
+      Especialistas em consórcio
     </div>
     <h1>Realize seu sonho<br/><em>sem pagar juros.</em></h1>
     <p class="hero-sub">Consórcio de imóvel, veículo ou serviços com as melhores administradoras do Brasil. Um especialista cuida de tudo por você — sem burocracia.</p>
@@ -644,12 +675,7 @@
       <span class="sep"></span>
       <span class="trust-item">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        +15 administradoras
-      </span>
-      <span class="sep"></span>
-      <span class="trust-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        Regulamentado BACEN
+        Administradoras selecionadas
       </span>
       <span class="sep"></span>
       <span class="trust-item">
@@ -657,6 +683,10 @@
         Retorno em até 2h
       </span>
     </div>
+    <p style="font-size:.72rem;color:var(--muted);margin-top:1rem;display:flex;align-items:center;gap:.4rem;">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      BACEN regulamentado &nbsp;·&nbsp; Bahia e São Paulo
+    </p>
   </div>
 
   <!-- FORM CARD -->
@@ -682,7 +712,7 @@
       <div class="form-group">
         <label>O que deseja conquistar?</label>
         <select id="f-tipo">
-          <option value="">Selecione...</option>
+          <option value="">(Ex: casamento, viagens, imóvel, veículo etc.)</option>
           <option>Imóvel Residencial</option>
           <option>Imóvel Comercial</option>
           <option>Terreno</option>
@@ -732,8 +762,8 @@
       <span class="stat-label">Clientes contemplados</span>
     </div>
     <div class="stat-item reveal reveal-delay-1">
-      <span class="stat-num" data-target="15" data-suffix="+">0</span>
-      <span class="stat-label">Administradoras parceiras</span>
+      <span class="stat-num" data-target="5" data-suffix="">0</span>
+      <span class="stat-label">Administradoras selecionadas para você</span>
     </div>
     <div class="stat-item reveal reveal-delay-2">
       <span class="stat-num" data-target="98" data-suffix="%">0</span>
@@ -741,30 +771,26 @@
     </div>
     <div class="stat-item reveal reveal-delay-3">
       <span class="stat-num" data-target="12" data-suffix="º mês">0</span>
-      <span class="stat-label">Contemplação média</span>
+      <span class="stat-label">Contemplação com estratégia</span>
     </div>
   </div>
 </div>
 
 <!-- LOGOS MARQUEE -->
 <div id="logos">
-  <span class="logos-label">Parceiros e administradoras homologadas</span>
+  <span class="logos-label">Administradoras selecionadas com foco em personalização</span>
   <div class="logos-track-wrap">
     <div class="logos-track">
-      <div class="logo-pill"><img src="pslogo.webp" alt="Porto Seguro"/></div>
-      <div class="logo-pill"><img src="logosantander.png" alt="Santander"/></div>
-      <div class="logo-pill"><img src="logorodobens.png" alt="Rodobens"/></div>
-      <div class="logo-pill"><img src="logohs.webp" alt="HS Consórcios"/></div>
       <div class="logo-pill"><img src="logoembracon.png" alt="Embracon"/></div>
-      <div class="logo-pill"><img src="logobradesco.png" alt="Bradesco"/></div>
+      <div class="logo-pill"><img src="logorodobens.png" alt="Rodobens"/></div>
+      <div class="logo-pill"><img src="pslogo.webp" alt="Porto Seguro"/></div>
+      <div class="logo-pill"><img src="logohs.webp" alt="HS Consórcios"/></div>
       <div class="logo-pill"><img src="itau.png" alt="Itaú"/></div>
       <!-- duplicados para loop contínuo -->
-      <div class="logo-pill"><img src="pslogo.webp" alt="Porto Seguro"/></div>
-      <div class="logo-pill"><img src="logosantander.png" alt="Santander"/></div>
-      <div class="logo-pill"><img src="logorodobens.png" alt="Rodobens"/></div>
-      <div class="logo-pill"><img src="logohs.webp" alt="HS Consórcios"/></div>
       <div class="logo-pill"><img src="logoembracon.png" alt="Embracon"/></div>
-      <div class="logo-pill"><img src="logobradesco.png" alt="Bradesco"/></div>
+      <div class="logo-pill"><img src="logorodobens.png" alt="Rodobens"/></div>
+      <div class="logo-pill"><img src="pslogo.webp" alt="Porto Seguro"/></div>
+      <div class="logo-pill"><img src="logohs.webp" alt="HS Consórcios"/></div>
       <div class="logo-pill"><img src="itau.png" alt="Itaú"/></div>
     </div>
   </div>
@@ -788,15 +814,15 @@
         <div class="bene-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
-        <div class="bene-title">Melhor plano do mercado</div>
-        <p class="bene-text">Comparamos mais de 15 administradoras para encontrar o plano com menor taxa e condições ideais para o seu perfil e objetivo.</p>
+        <div class="bene-title">Planos selecionados de acordo com seu perfil</div>
+        <p class="bene-text">Comparamos as melhores administradoras para encontrar o plano com menor taxa e condições ideais para o seu perfil e objetivo.</p>
       </div>
       <div class="bene-card reveal reveal-delay-2">
         <div class="bene-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
         </div>
         <div class="bene-title">Contemplação acelerada</div>
-        <p class="bene-text">Com estratégia de lances orientada pelos nossos especialistas, a maioria dos clientes é contemplada entre o 6º e 24º mês.</p>
+        <p class="bene-text">Estratégia em lances baseada no perfil de cada cliente, com consultoria especializada.</p>
       </div>
     </div>
   </div>
@@ -862,11 +888,11 @@
       </div>
       <div class="faq-item">
         <button class="faq-q">Quanto tempo para ser contemplado? <span class="faq-icon">+</span></button>
-        <div class="faq-a">Os sorteios acontecem mensalmente. Com estratégia de lances, a maioria dos nossos clientes é contemplada entre o 6º e o 24º mês.</div>
+        <div class="faq-a">Os sorteios acontecem mensalmente. Com estratégias de lances — como lance embutido, fidelidade e pontualidade — as chances de contemplação são aceleradas, permitindo que muitos clientes sejam atendidos bem antes do prazo do grupo.</div>
       </div>
       <div class="faq-item">
-        <button class="faq-q">Posso comprar de qualquer vendedor? <span class="faq-icon">+</span></button>
-        <div class="faq-a">Sim. A carta de crédito é aceita em qualquer imobiliária, construtora ou vendedor particular (imóveis) ou concessionária (veículos). Você compra à vista e negocia melhor preço.</div>
+        <button class="faq-q">Onde posso usar minha carta? <span class="faq-icon">+</span></button>
+        <div class="faq-a">A carta de crédito tem ampla aceitação: para imóveis, pode ser usada em imobiliárias, construtoras ou negociações diretas com proprietários; para veículos, em qualquer concessionária ou vendedor particular. Como o pagamento é à vista, você ainda ganha poder de negociação no preço final.</div>
       </div>
     </div>
   </div>
