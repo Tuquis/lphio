@@ -221,7 +221,12 @@
     .hero-actions {
       display: flex; flex-direction: column; gap: .85rem;
       max-width: 400px;
+      align-items: stretch;
       animation: fadeUp .7s .3s ease both;
+    }
+    @media (max-width: 960px) {
+      .hero-actions { max-width: 100%; align-items: center; }
+      .btn-wa, .btn-secondary { width: 100%; max-width: 420px; }
     }
 
     .btn-wa {
@@ -604,8 +609,21 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 960px) {
-      #hero { grid-template-columns: 1fr; padding: 3rem 5% 3rem; min-height: auto; gap: 2.5rem; }
-      .hero-card { margin-top: 0; }
+      #hero {
+        grid-template-columns: 1fr;
+        padding: 3rem 5% 3rem;
+        min-height: auto;
+        gap: 2.5rem;
+        text-align: center;
+      }
+      .hero-left { display: flex; flex-direction: column; align-items: center; }
+      .hero-eyebrow { margin-left: auto; margin-right: auto; }
+      .hero-sub { margin-left: auto; margin-right: auto; text-align: center; }
+      .hero-trust { justify-content: center; }
+      .hero-actions { max-width: 100%; align-items: center; width: 100%; }
+      .btn-wa, .btn-secondary { width: 100%; max-width: 420px; justify-content: center; }
+      .hero-card { margin-top: 0; width: 100%; }
+      .form-submit { text-align: center; }
       .bene-grid, .depo-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
@@ -614,13 +632,10 @@
       #hero { padding: 2rem 4% 2.5rem; gap: 2rem; }
       #hero h1 { font-size: clamp(2rem, 8vw, 2.8rem); }
       .hero-sub { font-size: .92rem; }
-      .hero-actions { max-width: 100%; }
-      .btn-wa, .btn-secondary { width: 100%; }
       .hero-card { padding: 1.6rem 1.2rem; }
       .form-row { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgba(255,255,255,.08); }
       .stat-item { background: var(--ink); border-right: none; }
-      .bene-grid, .depo-grid { grid-template-columns: 1fr; }
       #beneficios, #prova, #faq { padding: 3.5rem 4%; }
       #final-cta { padding: 4rem 4%; }
       .wa-float .wa-float-label { display: none; }
